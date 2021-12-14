@@ -1,14 +1,12 @@
 package com.lion.tekoucangapp;
 
-import androidx.appcompat.app.AppCompatActivity;
+import com.lion.lib_common.themvp.presenter.ActivityPresenter;
 
-import android.os.Bundle;
+public class MainActivity extends ActivityPresenter<MainActDelegate> {
 
-public class MainActivity extends AppCompatActivity {
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+    protected Class<MainActDelegate> getDelegateClass() {
+        return MainActDelegate.class;
     }
 }
