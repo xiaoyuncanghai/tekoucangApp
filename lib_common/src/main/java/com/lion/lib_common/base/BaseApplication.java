@@ -2,9 +2,15 @@ package com.lion.lib_common.base;
 
 import android.content.Context;
 import android.content.res.Configuration;
+import android.util.Log;
+
 import androidx.multidex.MultiDex;
 import androidx.multidex.MultiDexApplication;
+
 import com.apkfuns.logutils.LogUtils;
+import com.lion.lib_common.util.Utils;
+import com.tencent.smtt.sdk.QbSdk;
+
 import java.util.List;
 
 
@@ -41,10 +47,27 @@ public class BaseApplication extends MultiDexApplication {
         sInstance = this;
         LogUtils.getLogConfig()
                 .configAllowLog(true)
-                .configTagPrefix("Jeffer")
+                .configTagPrefix("yuchao")
                 .configShowBorders(true)
                 .configFormatTag("%d{HH:mm:ss:SSS} %t %c{-5}");
+        QbSdk.setDownloadWithoutWifi(true);
+        QbSdk.PreInitCallback cb = new QbSdk.PreInitCallback() {
+            @Override
+            public void onViewInitFinished(boolean arg0) {
+                Log.d("app", " onViewInitFinished is " + arg0);
+            }
 
+            @Override
+            public void onCoreInitFinished() {
+
+            }
+        };
+        QbSdk.initX5Environment(getApplicationContext(),  cb);
+        /*if (Utils.isAppDebug()) {
+            ARouter.openDebug();
+            ARouter.openLog();
+        }
+        ARouter.init(this);*/
     }
 
     @Override

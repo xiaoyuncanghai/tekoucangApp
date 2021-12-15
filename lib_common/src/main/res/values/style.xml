@@ -1,0 +1,8 @@
+<!--Progress -->
+<resources>
+
+    <style name="AvonProgressBar" parent="Widget.AppCompat.ProgressBar.Horizontal">
+        <item name="android:color">@color/color_yellow</item>
+        <item name="android:progressDrawable">@drawable/progress_drawable</item>
+    </style>
+</resources>

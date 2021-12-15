@@ -12,7 +12,6 @@ import com.lion.lib_common.rxEasyhttp.EasyHttp;
 import com.lion.lib_common.rxEasyhttp.cache.converter.SerializableDiskConverter;
 import com.lion.lib_common.rxEasyhttp.model.HttpHeaders;
 import com.lion.lib_common.rxEasyhttp.utils.HttpLog;
-import com.lion.lib_common.util.Utils;
 
 import java.util.List;
 
@@ -57,12 +56,6 @@ public class MainApplication extends BaseApplication {
                 .setCacheMaxSize(50 * 1024 * 1024)//设置缓存大小为50M
                 .setCacheVersion(1)//缓存版本为1
                 .setHostnameVerifier(new UnSafeHostnameVerifier(BASE_URL));
-        /*if (Utils.isAppDebug()) {
-            //开启InstantRun之后，一定要在ARouter.init之前调用openDebug
-            ARouter.openDebug();
-            ARouter.openLog();
-        }
-        ARouter.init(this);*/
         Fragmentation.builder()
                 // 设置 栈视图 模式为 悬浮球模式   SHAKE: 摇一摇唤出   NONE：隐藏
                 .stackViewMode(Fragmentation.NONE)

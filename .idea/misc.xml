@@ -5,8 +5,12 @@
       <map>
         <entry key="..\:/workspace/Project/code_android/practice/TekoucangApp/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/workspace/Project/code_android/practice/TekoucangApp/app/src/main/res/layout/activity_splash.xml" value="0.12395833333333334" />
+        <entry key="..\:/workspace/Project/code_android/practice/TekoucangApp/lib_common/src/main/res/drawable/progress_drawable.xml" value="0.1" />
+        <entry key="..\:/workspace/Project/code_android/practice/TekoucangApp/lib_common/src/main/res/drawable/splash_suggest_confirm_button.xml" value="0.1171875" />
+        <entry key="..\:/workspace/Project/code_android/practice/TekoucangApp/lib_common/src/main/res/layout/activity_webview.xml" value="0.1" />
         <entry key="..\:/workspace/Project/code_android/practice/TekoucangApp/lib_common/src/main/res/layout/layout_actionbar.xml" value="0.229901269393512" />
         <entry key="..\:/workspace/Project/code_android/practice/TekoucangApp/lib_common/src/main/res/layout/layout_status_bar.xml" value="0.15307971014492755" />
+        <entry key="..\:/workspace/Project/code_android/practice/TekoucangApp/lib_common/src/main/res/layout/notification_dialog.xml" value="0.1" />
       </map>
     </option>
   </component>

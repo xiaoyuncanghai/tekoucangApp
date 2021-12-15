@@ -10,9 +10,7 @@ android {
         targetSdk 31
         versionCode 1
         versionName "1.0"
-
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-        consumerProguardFiles "consumer-rules.pro"
     }
 
     buildTypes {
@@ -26,4 +24,5 @@ android {
 dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
     api  project(':lib_opensource')
+    implementation files('libs\\tbs_sdk_thirdapp_v4.3.0.176_44076_sharewithdownloadwithfile_withoutGame_obfs_20210724_161800.jar')
 }
