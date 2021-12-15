@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!--APP的主题色-->
-    <color name="colorPrimary">#5F71FF</color>
-    <color name="colorPrimaryDark">#5F71FF</color>
-    <color name="colorAccent">#5F71FF</color>
-    <color name="lightPrimaryColor">#aa5F71FF</color>
+    <color name="colorPrimary">#FFFFFFFF</color>
+    <color name="colorPrimaryDark">#FFFFFFFF</color>
+    <color name="colorAccent">#FFFFFFFF</color>
+    <color name="lightPrimaryColor">#FFFFFFFF</color>
 
     <!--<color name="cp_colorPrimary">#FC6306</color>
     <color name="cp_colorPrimaryDark">#FC6306</color>

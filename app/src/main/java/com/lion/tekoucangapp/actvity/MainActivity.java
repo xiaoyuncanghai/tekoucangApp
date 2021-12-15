@@ -1,6 +1,7 @@
-package com.lion.tekoucangapp;
+package com.lion.tekoucangapp.actvity;
 
 import com.lion.lib_common.themvp.presenter.ActivityPresenter;
+import com.lion.tekoucangapp.delegate.MainActDelegate;
 
 public class MainActivity extends ActivityPresenter<MainActDelegate> {
 
