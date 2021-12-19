@@ -12,8 +12,13 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/circle" />
+            <option value="$PROJECT_DIR$/classify" />
+            <option value="$PROJECT_DIR$/homepage" />
             <option value="$PROJECT_DIR$/lib_common" />
             <option value="$PROJECT_DIR$/lib_opensource" />
+            <option value="$PROJECT_DIR$/mine" />
+            <option value="$PROJECT_DIR$/shop" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

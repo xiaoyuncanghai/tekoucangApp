@@ -3,14 +3,21 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/workspace/Project/code_android/practice/TekoucangApp/app/src/main/res/drawable/ic_circle_press.xml" value="0.13796296296296295" />
+        <entry key="..\:/workspace/Project/code_android/practice/TekoucangApp/app/src/main/res/drawable/ic_homepage_press.xml" value="0.13796296296296295" />
         <entry key="..\:/workspace/Project/code_android/practice/TekoucangApp/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/workspace/Project/code_android/practice/TekoucangApp/app/src/main/res/layout/activity_splash.xml" value="0.12395833333333334" />
+        <entry key="..\:/workspace/Project/code_android/practice/TekoucangApp/circle/src/main/res/layout/fragment_home_page.xml" value="0.11594202898550725" />
+        <entry key="..\:/workspace/Project/code_android/practice/TekoucangApp/classify/src/main/res/layout/fragment_home_page.xml" value="0.11594202898550725" />
+        <entry key="..\:/workspace/Project/code_android/practice/TekoucangApp/homepage/src/main/res/layout/fragment_home_page.xml" value="0.11594202898550725" />
         <entry key="..\:/workspace/Project/code_android/practice/TekoucangApp/lib_common/src/main/res/drawable/progress_drawable.xml" value="0.1" />
         <entry key="..\:/workspace/Project/code_android/practice/TekoucangApp/lib_common/src/main/res/drawable/splash_suggest_confirm_button.xml" value="0.1171875" />
         <entry key="..\:/workspace/Project/code_android/practice/TekoucangApp/lib_common/src/main/res/layout/activity_webview.xml" value="0.1" />
         <entry key="..\:/workspace/Project/code_android/practice/TekoucangApp/lib_common/src/main/res/layout/layout_actionbar.xml" value="0.229901269393512" />
         <entry key="..\:/workspace/Project/code_android/practice/TekoucangApp/lib_common/src/main/res/layout/layout_status_bar.xml" value="0.15307971014492755" />
         <entry key="..\:/workspace/Project/code_android/practice/TekoucangApp/lib_common/src/main/res/layout/notification_dialog.xml" value="0.1" />
+        <entry key="..\:/workspace/Project/code_android/practice/TekoucangApp/mine/src/main/res/layout/fragment_home_page.xml" value="0.11594202898550725" />
+        <entry key="..\:/workspace/Project/code_android/practice/TekoucangApp/shop/src/main/res/layout/fragment_home_page.xml" value="0.11594202898550725" />
       </map>
     </option>
   </component>

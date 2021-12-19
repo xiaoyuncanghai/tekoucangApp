@@ -1,4 +1,4 @@
-package com.lion.tekoucangapp.actvity;
+package com.lion.tekoucangapp.activity;
 
 import com.lion.lib_common.themvp.presenter.ActivityPresenter;
 import com.lion.tekoucangapp.delegate.SplashActDelegate;

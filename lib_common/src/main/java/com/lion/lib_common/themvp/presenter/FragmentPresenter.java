@@ -15,7 +15,6 @@
  */
 package com.lion.lib_common.themvp.presenter;
 
-import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -43,11 +42,6 @@ import com.lion.lib_common.util.Utils;
  */
 public abstract class FragmentPresenter<T extends IDelegate> extends BaseFragment {
     public T viewDelegate;
-    public TextView tv_left;
-    public TextView tv_title;
-    public TextView tv_right;
-    public TextView tv_right_text;
-    private Typeface typeface;
 
     private boolean isViewCreated;
     private boolean isUIVisible;
@@ -83,67 +77,20 @@ public abstract class FragmentPresenter<T extends IDelegate> extends BaseFragmen
 
     }
 
-   /* @Override
-    public void onResume() {
-        super.onResume();
-        if (tv_right_tip!=null){
-            if (com.yuu1.p2p.utils.T.getUser()!=null&& com.yuu1.p2p.utils.T.getUser().isLogin()&&tv_right_tip.getVisibility()==View.VISIBLE) {
-                String param = "uid=" + MyApplication.getInstance().getUser().getUid() + "&page=1&token=" + MyApplication.getInstance().getUser().getToken() + "&platform=1";
-                Map<String, Object> fieldMap = new LinkedHashMap<>();
-                fieldMap.put("param", RSAUtil.encryptByPublicKeyWithBase64ForSplit(param));
-                Mango.getInstance().baseUrl(Constant.BASE_URL_PRODUCTION).postWithCache(param, this.getActivity(), Constant.API_MSG_LIST, fieldMap, MsgBean.class, new NetCallback<MsgBean>() {
-
-                    @Override
-                    public void onBefore(Activity activity) {
-
-                    }
-
-                    @Override
-                    public void onResponse(Call<ResponseBody> call, MsgBean data) {
-                        super.onResponse(call, data);
-                        if ("1".equals(data.getStatus())) {
-                            tv_right_tip.setBadgeCount(data.getResult().getCount(), true);
-                        } else {
-                            tv_right_tip.setBadgeCount(0, true);
-                        }
-                    }
-
-                    @Override
-                    public void onLoadFromCache(MsgBean msgBean) {
-                        super.onLoadFromCache(msgBean);
-                    }
-
-                    @Override
-                    public void onFailure(Call<ResponseBody> call, CommonException exception) {
-                        super.onFailure(call, exception);
-                        tv_right_tip.setBadgeCount(0, true);
-                    }
-                });
-            }
-        }
-    }*/
-
     //  统一处理消息未读条数显示
     @Override
     public void onHiddenChanged(boolean hidden) {
         super.onHiddenChanged(hidden);
         if (!hidden){
-
-
         }
     }
 
     //do something
     protected void onInvisible() {
-
-
     }
 
 
     public abstract void initData();
-
-
-
 
     @Override
     public void setUserVisibleHint(boolean isVisibleToUser) {
@@ -164,8 +111,6 @@ public abstract class FragmentPresenter<T extends IDelegate> extends BaseFragmen
             savedInstanceState) {
         if (viewDelegate.getRootView()==null){
             viewDelegate.create(inflater, container, savedInstanceState);
-            initStatusbar(viewDelegate.getRootView());
-            initActionbar(viewDelegate.getRootView());
             bindEventListener();
             viewDelegate.initWidget(savedInstanceState);
         }
@@ -191,77 +136,6 @@ public abstract class FragmentPresenter<T extends IDelegate> extends BaseFragmen
 
         LogUtils.d(getClass().getName() + "页面销毁了");
     }
-
-    private void initActionbar(View view) {
-            typeface= Typeface.createFromAsset(getActivity().getAssets(),
-                    "iconfont/iconfont.ttf");
-            LinearLayout ll_actionbar = (LinearLayout) view.findViewById(R.id.ll_action_bar);
-            if (ll_actionbar!=null){
-                tv_left = (TextView)view.findViewById(R.id.tv_left);
-                tv_title = (TextView)view.findViewById(R.id.tv_title);
-                tv_right = (TextView)view.findViewById(R.id.tv_right);
-                tv_right_text = (TextView)view.findViewById(R.id.tv_right_text);
-                if (tv_left!=null){
-                    tv_left.setOnClickListener(clickListener);
-                }
-                if (tv_right!=null){
-                    tv_right.setOnClickListener(clickListener);
-                }
-            }
-
-    }
-
-    public void setLeft(String unicodeText) {
-        tv_left.setTypeface(typeface);
-        tv_left.setText(unicodeText);
-    }
-    public void setRightTextColor(int color){
-        tv_right.setTextColor(color);
-    }
-    public void setLeftTextColor(int color){
-        tv_left.setTextColor(color);
-    }
-
-    public void setTitle(String text) {
-        tv_title.setText(text);
-    }
-
-    public void setRight(String unicodeText) {
-        tv_right.setTypeface(typeface);
-        tv_right.setText(unicodeText);
-
-    }
-
-    public void setRightTextSize(float textSize) {
-        tv_right.setTextSize(textSize);
-    }
-
-    public void setRightText(String text) {
-        tv_right.setText(text);
-
-    }
-
-    public void onLeftClick(View v) {
-
-    }
-    public void onRightClick(View v) {
-
-
-    }
-
-    private View.OnClickListener clickListener = new View.OnClickListener() {
-        @Override
-        public void onClick(View v) {
-            if (v.getId() == R.id.tv_left){
-                onLeftClick(v);
-            }else if (v.getId() == R.id.tv_right){
-                onRightClick(v);
-            }
-        }
-    };
-
-
-
 
     protected void bindEventListener() {
     }
@@ -297,14 +171,4 @@ public abstract class FragmentPresenter<T extends IDelegate> extends BaseFragmen
     }
 
     protected abstract Class<T> getDelegateClass();
-
-
-    private void initStatusbar(View rootView) {
-        View view = rootView.findViewById(R.id.v_status_bar);
-        if (view!=null){
-            LinearLayout.LayoutParams param = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
-            param.height = Utils.getStatusBarHeight(this.getActivity());
-            view.setLayoutParams(param);
-        }
-    }
 }

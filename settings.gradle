@@ -10,3 +10,8 @@ rootProject.name = "TekoucangApp"
 include ':app'
 include ':lib_common'
 include ':lib_opensource'
+include ':homepage'
+include ':classify'
+include ':shop'
+include ':circle'
+include ':mine'

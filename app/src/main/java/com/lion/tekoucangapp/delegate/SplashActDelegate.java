@@ -15,7 +15,7 @@ import com.lion.lib_common.themvp.view.AppDelegate;
 import com.lion.lib_common.ui.WebViewActivity;
 import com.lion.lib_common.util.SPHelper;
 import com.lion.tekoucangapp.R;
-import com.lion.tekoucangapp.actvity.MainActivity;
+import com.lion.tekoucangapp.activity.MainActivity;
 
 public class SplashActDelegate extends AppDelegate {
     @Override
