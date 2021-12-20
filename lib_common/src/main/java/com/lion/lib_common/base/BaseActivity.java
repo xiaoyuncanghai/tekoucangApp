@@ -3,6 +3,7 @@ package com.lion.lib_common.base;
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
+import androidx.fragment.app.FragmentActivity;
 
 
 import me.yokeyword.fragmentation.SupportActivity;

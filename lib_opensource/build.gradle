@@ -75,4 +75,5 @@ dependencies {
     api 'com.squareup.okio:okio:2.8.0'
     api 'com.library.tangxiaolv:telegramgallery:1.0.3'
     api 'com.afollestad.material-dialogs:core:0.9.4.4'
+    api  'com.github.Vincent7Wong:EasyNavigation:2.0.5'
 }

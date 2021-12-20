@@ -5,13 +5,11 @@
     <color name="colorPrimaryDark">#FFFFFFFF</color>
     <color name="colorAccent">#FFFFFFFF</color>
     <color name="lightPrimaryColor">#FFFFFFFF</color>
+    <color name="normal_tab_color">#7F8699</color>
+    <color name="select_tab_color">#702BC5</color>
+
 
     <color name="color_yellow">#FFB100</color>
-
-    <!--<color name="cp_colorPrimary">#FC6306</color>
-    <color name="cp_colorPrimaryDark">#FC6306</color>
-    <color name="cp_colorAccent">#FC6306</color>-->
-
     <color name="cp_color_gray_light">#cdcdcd</color>
     <color name="cp_color_gray">#999999</color>
     <color name="cp_color_gray_deep">#666666</color>
