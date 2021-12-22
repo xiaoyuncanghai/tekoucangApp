@@ -9,4 +9,5 @@ package com.lion.lib_common.constants;
 public interface Constant {
     public static final String KEY_FIRST_ENTER = "first_enter";
     public static final String KEY_WEB_LINK = "web_link";
+
 }

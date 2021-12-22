@@ -2,6 +2,7 @@ package com.lion.tekoucangapp.delegate;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.LinearLayout;
 
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
@@ -11,6 +12,8 @@ import com.lion.circle.CircleFragment;
 import com.lion.classify.ClassifyFragment;
 import com.lion.homepage.HomePageFragment;
 import com.lion.lib_common.themvp.view.AppDelegate;
+import com.lion.lib_common.util.StatusBarUtil;
+import com.lion.lib_common.util.Utils;
 import com.lion.mine.MineFragment;
 import com.lion.shop.ShopFragment;
 import com.lion.tekoucangapp.R;
@@ -38,6 +41,10 @@ public class MainActDelegate extends AppDelegate {
     @Override
     public void initWidget(Bundle savedInstanceState) {
         super.initWidget(savedInstanceState);
+        LinearLayout root = get(R.id.root);
+        root.setPadding(0,
+                Utils.getStatusBarHeight(this.getActivity()) + Utils.dip2px(this.getActivity(), 5f),
+                0, Utils.dip2px(this.getActivity(), 10f));
         navigationBar = get(R.id.navigationBar);
         fragments.add(HomePageFragment.newInstance());
         fragments.add(ClassifyFragment.newInstance());
