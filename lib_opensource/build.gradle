@@ -60,6 +60,7 @@ dependencies {
     api 'com.squareup.retrofit2:retrofit:2.9.0'
     api 'com.squareup.retrofit2:converter-gson:2.9.0'
     api 'com.squareup.retrofit2:adapter-rxjava2:2.9.0'
+    api 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.35'
 
     api 'me.majiajie:pager-bottom-tab-strip:2.2.5'
     api 'com.github.bumptech.glide:glide:4.11.0'
@@ -76,4 +77,5 @@ dependencies {
     api 'com.library.tangxiaolv:telegramgallery:1.0.3'
     api 'com.afollestad.material-dialogs:core:0.9.4.4'
     api  'com.github.Vincent7Wong:EasyNavigation:2.0.5'
+    api 'com.github.xiaohaibin:XBanner:androidx_v1.0.6'
 }

@@ -4,10 +4,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
-    <TextView
-        android:text="1"
-        android:textSize="@dimen/size_32dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+
+    <include layout="@layout/activity_header" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rcy_home_page"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 
 </LinearLayout>

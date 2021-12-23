@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@mipmap/home_banner_layout" />
+
+    <LinearLayout
+        android:id="@+id/search_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/size_20dp"
+        android:layout_marginEnd="@dimen/size_20dp"
+        android:layout_marginTop="@dimen/size_30dp"
+        android:layout_weight="1"
+        android:background="@drawable/shape_search_bar"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:paddingLeft="@dimen/size_15dp">
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_gravity="center"
+            android:src="@drawable/search_icon"
+            android:textColor="@color/secondaryText"
+            android:textSize="@dimen/text_size_12sp" />
+
+        <EditText
+            android:id="@+id/et_search"
+            android:layout_width="0dp"
+            android:layout_height="35dp"
+            android:layout_marginStart="@dimen/size_10dp"
+            android:layout_marginRight="@dimen/size_30dp"
+            android:layout_weight="1"
+            android:background="@color/common_bg"
+            android:hint="请输入商品名称"
+            android:imeOptions="actionSearch"
+            android:singleLine="true"
+            android:textColor="@color/secondaryText"
+            android:textSize="@dimen/text_size_14sp" />
+    </LinearLayout>
+
+    <com.stx.xhb.xbanner.XBanner
+        android:id="@+id/xBanner"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="@dimen/size_20dp"
+        android:layout_marginEnd="@dimen/size_20dp"
+        android:layout_marginTop="@dimen/size_120dp"
+        app:AutoPlayTime="3000"
+        app:isShowIndicatorOnlyOne="true"
+        app:isShowNumberIndicator="true"
+        app:isShowTips="true"
+        app:pageChangeDuration="800"
+        app:pointNormal="@drawable/shape_normal"
+        app:pointSelect="@drawable/shape_selected"
+        app:pointsContainerBackground="#44aaaaaa"
+        app:pointsPosition="RIGHT"
+        app:tipTextColor="@color/white"
+        app:tipTextSize="12sp" />
+
+</RelativeLayout>
