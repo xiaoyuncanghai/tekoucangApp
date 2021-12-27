@@ -4,10 +4,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
-
-    <include layout="@layout/activity_header" />
-
     <androidx.recyclerview.widget.RecyclerView
+        android:background="@color/gray_f3"
         android:id="@+id/rcy_home_page"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />

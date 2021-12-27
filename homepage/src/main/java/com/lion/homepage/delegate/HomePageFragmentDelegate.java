@@ -30,6 +30,11 @@ public class HomePageFragmentDelegate extends AppDelegate {
         homePageAdapter = new HomePageAdapter(getActivity(), homePageItemList);
         rcy_home_page.setAdapter(homePageAdapter);
         rcy_home_page.setItemAnimator(new DefaultItemAnimator());
-
+        initData();
     }
+
+    private void initData() {
+    }
+
+
 }

@@ -8,6 +8,8 @@
     <color name="normal_tab_color">#7F8699</color>
     <color name="select_tab_color">#702BC5</color>
     <color name="search_color">#F0F0F0</color>
+    <color name="first_desc_color">#484A59</color>
+    <color name="second_desc_color">#38383A</color>
 
 
     <color name="color_yellow">#FFB100</color>
