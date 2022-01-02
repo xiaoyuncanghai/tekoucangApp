@@ -4,13 +4,17 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/workspace/Project/code_android/practice/TekoucangApp/homepage/src/main/res/drawable/prod_item_shape.xml" value="0.14947916666666666" />
+        <entry key="..\:/workspace/Project/code_android/practice/TekoucangApp/homepage/src/main/res/drawable/sale_btn_shape.xml" value="0.16927083333333334" />
+        <entry key="..\:/workspace/Project/code_android/practice/TekoucangApp/homepage/src/main/res/drawable/score_price_background.xml" value="0.16927083333333334" />
         <entry key="..\:/workspace/Project/code_android/practice/TekoucangApp/homepage/src/main/res/drawable/shape_search_bar.xml" value="0.1" />
         <entry key="..\:/workspace/Project/code_android/practice/TekoucangApp/homepage/src/main/res/layout/home_banner_layout.xml" value="0.1" />
         <entry key="..\:/workspace/Project/code_android/practice/TekoucangApp/homepage/src/main/res/layout/home_best_product_item.xml" value="0.22" />
         <entry key="..\:/workspace/Project/code_android/practice/TekoucangApp/homepage/src/main/res/layout/home_category_layout.xml" value="0.1" />
         <entry key="..\:/workspace/Project/code_android/practice/TekoucangApp/homepage/src/main/res/layout/home_clear_product_item.xml" value="0.4466666666666667" />
+        <entry key="..\:/workspace/Project/code_android/practice/TekoucangApp/homepage/src/main/res/layout/home_product_list_layout.xml" value="0.3333333333333333" />
         <entry key="..\:/workspace/Project/code_android/practice/TekoucangApp/homepage/src/main/res/layout/home_product_vip_layout.xml" value="0.14895833333333333" />
         <entry key="..\:/workspace/Project/code_android/practice/TekoucangApp/homepage/src/main/res/layout/home_sub_title.xml" value="0.16666666666666666" />
+        <entry key="..\:/workspace/Project/code_android/practice/TekoucangApp/lib_common/src/main/res/drawable/progress_drawable.xml" value="0.16927083333333334" />
       </map>
     </option>
   </component>

@@ -15,6 +15,7 @@ import com.lion.homepage.adapter.HomePageAdapter;
 import com.lion.homepage.data.BannerData;
 import com.lion.homepage.data.HomePageDataBean;
 import com.lion.homepage.data.HomePageJsonBean;
+import com.lion.homepage.data.ProductItemJsonBean;
 import com.lion.lib_common.constants.URLConstant;
 import com.lion.lib_common.rxEasyhttp.EasyHttp;
 import com.lion.lib_common.rxEasyhttp.callback.SimpleCallBack;
@@ -30,7 +31,9 @@ public class HomePageFragmentDelegate extends AppDelegate {
 
     private RecyclerView rcy_home_page;
     private HomePageAdapter homePageAdapter;
-    private ArrayList<HomePageDataBean> homePageItemList = new ArrayList<HomePageDataBean>();
+    private ArrayList<HomePageDataBean> homePageItemList = new ArrayList<>();
+    private ArrayList<HomePageDataBean> homePageProductList = new ArrayList<>();
+    private ArrayList<HomePageDataBean> homePageList = new ArrayList<>();
     private LinearLayout root_home;
 
     @Override
@@ -45,7 +48,7 @@ public class HomePageFragmentDelegate extends AppDelegate {
         rcy_home_page.setLayoutManager(new GridLayoutManager(this.getActivity(), 20,
                 GridLayoutManager.VERTICAL, false));
         root_home = get(R.id.root_home);
-        homePageAdapter = new HomePageAdapter(getActivity(), homePageItemList);
+        homePageAdapter = new HomePageAdapter(getActivity(), homePageList);
         rcy_home_page.setAdapter(homePageAdapter);
         rcy_home_page.setItemAnimator(new DefaultItemAnimator());
         requestData();
@@ -124,7 +127,7 @@ public class HomePageFragmentDelegate extends AppDelegate {
                                 bestDataBean.setType(HomePageDataBean.TYPE_HOME_PAGE_VIP_TITLE);
                                 bestDataBean.setSubTitle("会员每日精选");
                                 homePageItemList.add(bestDataBean);
-                                for (int i = 0; i < userBestList.size(); i ++) {
+                                for (int i = 0; i < userBestList.size(); i++) {
                                     HomePageDataBean productVipDataBean = new HomePageDataBean();
                                     productVipDataBean.setType(HomePageDataBean.TYPE_HOME_PAGE_VIP_PRODUCT);
                                     productVipDataBean.setVipProductId(userBestList.get(i).getId());
@@ -135,8 +138,44 @@ public class HomePageFragmentDelegate extends AppDelegate {
                                     homePageItemList.add(productVipDataBean);
                                 }
                             }
+                            homePageList.addAll(0, homePageItemList);
                             homePageAdapter.notifyDataSetChanged();
                         }
+                    }
+                });
+
+        EasyHttp.get(URLConstant.LIST_PAGE)
+                .addConverterFactory(GsonConverterFactory.create())
+                .execute(new SimpleCallBack<String>() {
+                    @Override
+                    public void onError(ApiException e) {
+                        Snackbar.make(root_home, e.getMessage(), Snackbar.LENGTH_SHORT).show();
+                    }
+
+                    @Override
+                    public void onSuccess(String s) {
+                        ProductItemJsonBean productJsonBean = new Gson().fromJson(s, ProductItemJsonBean.class);
+                        if (productJsonBean.getStatus() == 200) {
+                            if (productJsonBean.getData() != null && productJsonBean.getData().size() > 0) {
+                                for (int i = 0; i < productJsonBean.getData().size(); i++) {
+                                    ProductItemJsonBean.DataBean productJsonItem = productJsonBean.getData().get(i);
+                                    HomePageDataBean productBean = new HomePageDataBean();
+                                    productBean.setType(HomePageDataBean.TYPE_HOME_PAGE_PRODUCT_LIST);
+                                    productBean.setProductImage(productJsonItem.getImage());
+                                    productBean.setProductContent(productJsonItem.getStore_name());
+                                    productBean.setProductOutTime(productJsonItem.getExpire_time());
+                                    productBean.setProductPrice(productJsonItem.getPrice());
+                                    productBean.setProductScorePrice(productJsonItem.getUse_integral_price());
+                                    productBean.setProductMarketPrice(productJsonItem.getOt_price());
+                                    productBean.setStoke(productJsonItem.getStock());
+                                    productBean.setSaleNum(productJsonItem.getSales());
+                                    homePageProductList.add(productBean);
+                                }
+                            }
+                            homePageList.addAll(homePageProductList);
+                            homePageAdapter.notifyDataSetChanged();
+                        }
+
                     }
                 });
     }

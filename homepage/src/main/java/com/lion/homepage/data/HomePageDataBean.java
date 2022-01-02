@@ -208,4 +208,77 @@ public class HomePageDataBean implements MultiItemEntity {
     public void setNormalProductPrice(double normalProductPrice) {
         this.normalProductPrice = normalProductPrice;
     }
+
+    private String productImage;
+    private String productContent;
+    private String productOutTime;
+    private double productPrice;
+    private double productMarketPrice;
+    private double productScorePrice;
+    private int saleNum;
+    private int stoke;
+
+    public String getProductImage() {
+        return productImage;
+    }
+
+    public void setProductImage(String productImage) {
+        this.productImage = productImage;
+    }
+
+    public String getProductContent() {
+        return productContent;
+    }
+
+    public void setProductContent(String productContent) {
+        this.productContent = productContent;
+    }
+
+    public String getProductOutTime() {
+        return productOutTime;
+    }
+
+    public void setProductOutTime(String productOutTime) {
+        this.productOutTime = productOutTime;
+    }
+
+    public double getProductPrice() {
+        return productPrice;
+    }
+
+    public void setProductPrice(double productPrice) {
+        this.productPrice = productPrice;
+    }
+
+    public double getProductMarketPrice() {
+        return productMarketPrice;
+    }
+
+    public void setProductMarketPrice(double productMarketPrice) {
+        this.productMarketPrice = productMarketPrice;
+    }
+
+    public double getProductScorePrice() {
+        return productScorePrice;
+    }
+
+    public void setProductScorePrice(double productScorePrice) {
+        this.productScorePrice = productScorePrice;
+    }
+
+    public int getSaleNum() {
+        return saleNum;
+    }
+
+    public void setSaleNum(int saleNum) {
+        this.saleNum = saleNum;
+    }
+
+    public int getStoke() {
+        return stoke;
+    }
+
+    public void setStoke(int stoke) {
+        this.stoke = stoke;
+    }
 }

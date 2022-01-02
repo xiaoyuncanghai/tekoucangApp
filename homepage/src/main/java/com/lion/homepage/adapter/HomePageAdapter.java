@@ -6,12 +6,14 @@ import android.net.Uri;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.apkfuns.logutils.LogUtils;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners;
 import com.bumptech.glide.request.RequestOptions;
@@ -123,6 +125,26 @@ public class HomePageAdapter extends BaseMultiItemQuickAdapter<HomePageDataBean,
                 helper.setText(R.id.best_product_ot_price, "原价:￥" + item.getNormalProductPrice());
                 helper.setText(R.id.best_product_price, "现价:￥" + item.getVipProductPrice());
                 break;
+
+            case HomePageDataBean.TYPE_HOME_PAGE_PRODUCT_LIST:
+                ImageView home_prod_item_img = helper.getView(R.id.home_prod_item_img);
+                Glide.with(mContext).load(item.getProductImage()).placeholder(R.drawable.ic_launcher)
+                        .error(R.drawable.ic_launcher)
+                        .apply(RequestOptions.bitmapTransform(new RoundedCorners(1)))
+                        .into(home_prod_item_img);
+
+                helper.setText(R.id.product_item_title_tv, item.getProductContent());
+                helper.setText(R.id.product_item_desc_tv, "临期时间:" + item.getProductOutTime());
+                helper.setText(R.id.product_item_price, "￥:" + item.getProductPrice());
+                helper.setText(R.id.product_item_score_price, "用劵:" + item.getProductScorePrice());
+                helper.setText(R.id.product_market_price, "￥:" + item.getProductMarketPrice());
+                //TODO:
+                /*double progress = item.getSaleNum() / (item.getSaleNum() + item.getStoke()) * 100;
+                LogUtils.d("yuchao, sale = " + item.getSaleNum() + " stoke = " + item.getStoke() + " progress = " + progress);
+                helper.setText(R.id.product_sale_num, "已抢购:" + progress + "%");
+                ProgressBar pb_product = helper.getView(R.id.pb_product);
+                pb_product.setProgress((int) Math.round(progress));*/
+                break;
         }
 
     }
@@ -141,6 +163,7 @@ public class HomePageAdapter extends BaseMultiItemQuickAdapter<HomePageDataBean,
                         case HomePageDataBean.TYPE_HOME_PAGE_BANNER:
                         case HomePageDataBean.TYPE_HOME_PAGE_CLEAR_TITLE:
                         case HomePageDataBean.TYPE_HOME_PAGE_VIP_TITLE:
+                        case HomePageDataBean.TYPE_HOME_PAGE_PRODUCT_LIST:
                             return 20;
                         case HomePageDataBean.TYPE_HOME_PAGE_CATEGORY:
                             return 4;
