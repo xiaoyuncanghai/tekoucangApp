@@ -120,7 +120,7 @@ public abstract class FragmentPresenter<T extends IDelegate> extends BaseFragmen
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        LogUtils.d(getClass().getName().toString()+"onViewCreated");
+        LogUtils.d(getClass().getName() +"onViewCreated");
         isViewCreated = true;
         lazyLoad();
 

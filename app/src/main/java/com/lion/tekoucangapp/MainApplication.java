@@ -28,7 +28,7 @@ public class MainApplication extends BaseApplication {
         super.attachBaseContext(base);
     }
 
-    private final static String BASE_URL = "http://120.76.137.162:18081";
+    private final static String BASE_URL = "http://tjc.028kaifa.com";
     public Vibrator mVibrator;
     @Override
     public void onCreate() {

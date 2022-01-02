@@ -1,6 +1,7 @@
 package com.lion.lib_common.ui;
 
 import android.content.Intent;
+import android.os.Bundle;
 
 import androidx.annotation.Nullable;
 
@@ -11,6 +12,12 @@ public class WebViewActivity extends ActivityPresenter<WebViewActDelegate> {
     @Override
     protected Class<WebViewActDelegate> getDelegateClass() {
         return WebViewActDelegate.class;
+    }
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setStatusBar();
     }
 
     @Override
