@@ -8,6 +8,7 @@ import android.os.Process;
 import android.os.Vibrator;
 
 import com.lion.lib_common.base.BaseApplication;
+import com.lion.lib_common.constants.URLConstant;
 import com.lion.lib_common.rxEasyhttp.EasyHttp;
 import com.lion.lib_common.rxEasyhttp.cache.converter.SerializableDiskConverter;
 import com.lion.lib_common.rxEasyhttp.model.HttpHeaders;
@@ -28,7 +29,6 @@ public class MainApplication extends BaseApplication {
         super.attachBaseContext(base);
     }
 
-    private final static String BASE_URL = "http://tjc.028kaifa.com";
     public Vibrator mVibrator;
     @Override
     public void onCreate() {
@@ -50,12 +50,12 @@ public class MainApplication extends BaseApplication {
                 .setRetryCount(5)//默认网络不好自动重试3次
                 .setRetryDelay(1500)//每次延时500ms重试
                 .setRetryIncreaseDelay(1500)//每次延时叠加1500ms
-                .setBaseUrl(BASE_URL)
+                .setBaseUrl(URLConstant.BASE_URL)
                 .addCommonHeaders(headers)  //设置公共的请求头
                 .setCacheDiskConverter(new SerializableDiskConverter())//默认缓存使用序列化转化
                 .setCacheMaxSize(50 * 1024 * 1024)//设置缓存大小为50M
                 .setCacheVersion(1)//缓存版本为1
-                .setHostnameVerifier(new UnSafeHostnameVerifier(BASE_URL));
+                .setHostnameVerifier(new UnSafeHostnameVerifier(URLConstant.BASE_URL));
         Fragmentation.builder()
                 // 设置 栈视图 模式为 悬浮球模式   SHAKE: 摇一摇唤出   NONE：隐藏
                 .stackViewMode(Fragmentation.NONE)

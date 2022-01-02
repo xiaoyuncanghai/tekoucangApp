@@ -20,7 +20,8 @@
         android:background="@drawable/shape_search_bar"
         android:gravity="center"
         android:orientation="horizontal"
-        android:paddingLeft="@dimen/size_15dp">
+        android:paddingLeft="@dimen/size_15dp"
+        android:paddingEnd="@dimen/size_15dp">
 
         <ImageView
             android:layout_width="20dp"
@@ -53,7 +54,7 @@
         android:layout_alignParentTop="true"
         android:layout_marginStart="@dimen/size_20dp"
         android:layout_marginEnd="@dimen/size_20dp"
-        android:layout_marginTop="@dimen/size_120dp"
+        android:layout_marginTop="@dimen/size_80dp"
         app:AutoPlayTime="3000"
         app:isShowIndicatorOnlyOne="true"
         app:isShowNumberIndicator="true"

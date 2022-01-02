@@ -14,6 +14,14 @@
 
     <color name="color_yellow">#FFB100</color>
     <color name="cp_color_gray_light">#cdcdcd</color>
+    <color name="home_page_title_color">#a04cff</color>
+    <color name="home_page_clear_color">#fefefe</color>
+    <color name="home_page_clear_background">#f03e26</color>
+    <color name="home_page_best_content">#484a59</color>
+
+
+
+    <color name="home_page_subTitle_color">#262626</color>
     <color name="cp_color_gray">#999999</color>
     <color name="cp_color_gray_deep">#666666</color>
     <color name="cp_color_gray_dark">#333333</color>
