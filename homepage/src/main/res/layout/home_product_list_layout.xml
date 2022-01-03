@@ -6,6 +6,7 @@
     android:layout_height="wrap_content"
     android:layout_marginStart="@dimen/size_15dp"
     android:layout_marginTop="@dimen/dp_10"
+    android:layout_marginBottom="10dp"
     android:layout_marginEnd="@dimen/size_15dp"
     android:background="@drawable/prod_item_shape"
     android:orientation="horizontal"
@@ -13,10 +14,10 @@
     android:paddingBottom="5dp">
 
     <ImageView
-        android:layout_margin="5dp"
         android:id="@+id/home_prod_item_img"
         android:layout_width="@dimen/size_150dp"
-        android:layout_height="150dp" />
+        android:layout_height="150dp"
+        android:layout_margin="5dp" />
 
     <LinearLayout
         android:layout_width="0dp"
@@ -57,7 +58,7 @@
                 android:layout_height="wrap_content"
                 android:text="$100"
                 android:textColor="@color/home_page_product_price"
-                android:textSize="14sp"
+                android:textSize="12sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -72,7 +73,7 @@
                 android:paddingEnd="5dp"
                 android:text="卷后价 13.5"
                 android:textColor="@color/white"
-                android:textSize="10sp"
+                android:textSize="8sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/product_item_price"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -82,11 +83,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@drawable/sale_btn_shape"
-                android:paddingStart="@dimen/size_15dp"
-                android:paddingEnd="@dimen/size_15dp"
+                android:paddingStart="@dimen/size_12dp"
+                android:paddingEnd="@dimen/size_12dp"
                 android:text="抢购"
                 android:textColor="@color/white"
-                android:textSize="14sp"
+                android:textSize="12sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -98,6 +99,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/size_15dp">
 
+
             <TextView
                 android:id="@+id/product_market_price"
                 android:layout_width="wrap_content"
@@ -108,13 +110,22 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
+            <View
+                android:layout_width="30dp"
+                android:layout_height="1dp"
+                android:background="@color/second_desc_color"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/product_market_price"
+                app:layout_constraintStart_toStartOf="@+id/product_market_price"
+                app:layout_constraintTop_toTopOf="parent" />
+
 
             <TextView
                 android:id="@+id/product_sale_num"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/size_8dp"
-                android:text="已经抢购 80%"
+                android:layout_marginStart="@dimen/size_5dp"
+                android:text="已抢购80%"
                 android:textColor="@color/second_desc_color"
                 android:textSize="12sp"
                 app:layout_constraintStart_toEndOf="@+id/product_market_price"
@@ -123,8 +134,9 @@
             <ProgressBar
                 android:id="@+id/pb_product"
                 style="@style/AvonProgressBar"
-                android:layout_width="wrap_content"
-                android:layout_height="3dp"
+                android:layout_width="40dp"
+                android:layout_height="5dp"
+                android:layout_marginStart="5dp"
                 android:max="100"
                 android:progress="20"
                 app:layout_constraintBottom_toBottomOf="parent"

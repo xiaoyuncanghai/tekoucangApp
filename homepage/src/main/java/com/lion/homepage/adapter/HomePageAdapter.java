@@ -25,6 +25,7 @@ import com.lion.homepage.data.HomePageDataBean;
 import com.lion.lib_common.constants.URLConstant;
 import com.stx.xhb.xbanner.XBanner;
 
+import java.math.BigInteger;
 import java.util.List;
 
 public class HomePageAdapter extends BaseMultiItemQuickAdapter<HomePageDataBean, BaseViewHolder> {
@@ -138,12 +139,14 @@ public class HomePageAdapter extends BaseMultiItemQuickAdapter<HomePageDataBean,
                 helper.setText(R.id.product_item_price, "￥:" + item.getProductPrice());
                 helper.setText(R.id.product_item_score_price, "用劵:" + item.getProductScorePrice());
                 helper.setText(R.id.product_market_price, "￥:" + item.getProductMarketPrice());
-                //TODO:
-                /*double progress = item.getSaleNum() / (item.getSaleNum() + item.getStoke()) * 100;
-                LogUtils.d("yuchao, sale = " + item.getSaleNum() + " stoke = " + item.getStoke() + " progress = " + progress);
-                helper.setText(R.id.product_sale_num, "已抢购:" + progress + "%");
                 ProgressBar pb_product = helper.getView(R.id.pb_product);
-                pb_product.setProgress((int) Math.round(progress));*/
+                BigInteger saleNum = new BigInteger(String.valueOf(item.getSaleNum()));
+                BigInteger saleCoin = new BigInteger("100");
+                BigInteger totleNum = new BigInteger(String.valueOf(item.getSaleNum() + item.getStoke()));
+                double progress = saleNum.multiply(saleCoin).divide(totleNum).doubleValue();
+                LogUtils.d("yuchao, saleNum = "+saleNum + "totleNum = "+ totleNum + "progress = "+ progress);
+                helper.setText(R.id.product_sale_num, "已抢购:" + progress + "%");
+                pb_product.setProgress((int) progress);
                 break;
         }
 
