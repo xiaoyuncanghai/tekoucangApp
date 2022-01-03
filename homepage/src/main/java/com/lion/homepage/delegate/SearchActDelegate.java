@@ -132,6 +132,13 @@ public class SearchActDelegate extends AppDelegate {
                 requestList(page, keyword);
             }
         });
+
+        searchAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
+                //TODO:
+            }
+        });
     }
 
     private void requestList(int page, String keyword) {
