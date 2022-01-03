@@ -10,40 +10,38 @@
         android:background="@mipmap/home_banner_layout" />
 
     <LinearLayout
-        android:id="@+id/search_bar"
+        android:id="@+id/edit_search"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/size_20dp"
-        android:layout_marginEnd="@dimen/size_20dp"
-        android:layout_marginTop="@dimen/size_30dp"
-        android:layout_weight="1"
-        android:background="@drawable/shape_search_bar"
-        android:gravity="center"
+        android:layout_height="@dimen/size_32dp"
+        android:layout_gravity="center"
+        android:layout_marginStart="@dimen/size_10dp"
+        android:layout_marginTop="@dimen/size_20dp"
+        android:layout_marginEnd="@dimen/size_24dp"
+        android:background="@drawable/share_background_shape"
         android:orientation="horizontal"
-        android:paddingLeft="@dimen/size_15dp"
-        android:paddingEnd="@dimen/size_15dp">
+        android:paddingLeft="@dimen/size_10dp"
+        android:paddingRight="@dimen/size_10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:layout_gravity="center"
+            android:id="@+id/tv_icon_search"
+            android:layout_width="@dimen/size_12dp"
+            android:layout_height="@dimen/size_12dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginRight="@dimen/size_10dp"
             android:src="@drawable/search_icon"
             android:textColor="@color/secondaryText"
             android:textSize="@dimen/text_size_12sp" />
 
-        <EditText
-            android:id="@+id/et_search"
-            android:layout_width="0dp"
-            android:layout_height="35dp"
-            android:layout_marginStart="@dimen/size_10dp"
-            android:layout_marginRight="@dimen/size_30dp"
-            android:layout_weight="1"
-            android:background="@color/common_bg"
-            android:hint="请输入商品名称"
-            android:imeOptions="actionSearch"
-            android:singleLine="true"
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="请输入商品名称"
             android:textColor="@color/secondaryText"
-            android:textSize="@dimen/text_size_14sp" />
+            android:textSize="@dimen/text_size_12sp" />
     </LinearLayout>
 
     <com.stx.xhb.xbanner.XBanner

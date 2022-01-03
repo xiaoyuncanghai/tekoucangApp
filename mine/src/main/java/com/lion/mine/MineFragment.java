@@ -2,8 +2,6 @@ package com.lion.mine;
 
 import android.os.Bundle;
 
-import androidx.fragment.app.Fragment;
-
 import com.lion.lib_common.themvp.presenter.FragmentPresenter;
 import com.lion.mine.delegate.MineFgtDelegate;
 

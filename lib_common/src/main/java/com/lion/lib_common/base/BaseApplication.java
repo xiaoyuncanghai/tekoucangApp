@@ -8,7 +8,6 @@ import androidx.multidex.MultiDex;
 import androidx.multidex.MultiDexApplication;
 
 import com.apkfuns.logutils.LogUtils;
-import com.lion.lib_common.util.Utils;
 import com.tencent.smtt.sdk.QbSdk;
 
 import java.util.List;

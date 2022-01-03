@@ -5,14 +5,12 @@ import android.view.View;
 import android.widget.LinearLayout;
 
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentActivity;
 
 import com.apkfuns.logutils.LogUtils;
 import com.lion.circle.CircleFragment;
 import com.lion.classify.ClassifyFragment;
 import com.lion.homepage.HomePageFragment;
 import com.lion.lib_common.themvp.view.AppDelegate;
-import com.lion.lib_common.util.StatusBarUtil;
 import com.lion.lib_common.util.Utils;
 import com.lion.mine.MineFragment;
 import com.lion.shop.ShopFragment;

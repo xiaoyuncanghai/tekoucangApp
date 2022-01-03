@@ -4,8 +4,6 @@ import android.os.Build;
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
-import androidx.fragment.app.FragmentActivity;
-
 
 import com.lion.lib_common.R;
 import com.lion.lib_common.util.StatusBarUtil;

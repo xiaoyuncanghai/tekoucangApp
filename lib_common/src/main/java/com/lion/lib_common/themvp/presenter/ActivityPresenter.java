@@ -16,21 +16,15 @@
 package com.lion.lib_common.themvp.presenter;
 
 import android.graphics.Color;
-import android.graphics.Typeface;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
 import android.view.WindowManager;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-
-import androidx.appcompat.widget.Toolbar;
 
 import com.lion.lib_common.R;
 import com.lion.lib_common.base.BaseActivity;
 import com.lion.lib_common.themvp.view.IDelegate;
-import com.lion.lib_common.util.Utils;
 
 
 /**

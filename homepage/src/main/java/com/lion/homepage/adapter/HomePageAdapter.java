@@ -1,14 +1,9 @@
 package com.lion.homepage.adapter;
 
 import android.content.Context;
-import android.content.Intent;
-import android.net.Uri;
 import android.view.View;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.ProgressBar;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -22,7 +17,6 @@ import com.chad.library.adapter.base.BaseViewHolder;
 import com.lion.homepage.R;
 import com.lion.homepage.data.BannerData;
 import com.lion.homepage.data.HomePageDataBean;
-import com.lion.lib_common.constants.URLConstant;
 import com.stx.xhb.xbanner.XBanner;
 
 import java.math.BigInteger;
@@ -53,14 +47,7 @@ public class HomePageAdapter extends BaseMultiItemQuickAdapter<HomePageDataBean,
     protected void convert(BaseViewHolder helper, HomePageDataBean item) {
         switch (helper.getItemViewType()) {
             case HomePageDataBean.TYPE_HOME_PAGE_BANNER:
-                LinearLayout searchBar = helper.getView(R.id.search_bar);
                 XBanner xBanner = helper.getView(R.id.xBanner);
-                searchBar.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        //搜索
-                    }
-                });
                 xBanner.setBannerData(item.getBannerDataList());
                 xBanner.setAutoPlayAble(item.getBannerDataList().size() > 1);
                 xBanner.loadImage(new XBanner.XBannerAdapter() {
@@ -74,6 +61,7 @@ public class HomePageAdapter extends BaseMultiItemQuickAdapter<HomePageDataBean,
                                 .into((ImageView) view);
                     }
                 });
+                helper.addOnClickListener(R.id.edit_search);
                 /*xBanner.setOnItemClickListener(new XBanner.OnItemClickListener() {
                     @Override
                     public void onItemClick(XBanner banner, Object model, View view, int position) {

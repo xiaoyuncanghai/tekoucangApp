@@ -1,6 +1,8 @@
 package com.lion.homepage.delegate;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.LinearLayout;
 
 import androidx.recyclerview.widget.DefaultItemAnimator;
@@ -8,6 +10,7 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.apkfuns.logutils.LogUtils;
+import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.gson.Gson;
 import com.lion.homepage.R;
@@ -16,6 +19,7 @@ import com.lion.homepage.data.BannerData;
 import com.lion.homepage.data.HomePageDataBean;
 import com.lion.homepage.data.HomePageJsonBean;
 import com.lion.homepage.data.ProductItemJsonBean;
+import com.lion.homepage.ui.SearchActivity;
 import com.lion.lib_common.constants.URLConstant;
 import com.lion.lib_common.rxEasyhttp.EasyHttp;
 import com.lion.lib_common.rxEasyhttp.callback.SimpleCallBack;
@@ -52,6 +56,26 @@ public class HomePageFragmentDelegate extends AppDelegate {
         rcy_home_page.setAdapter(homePageAdapter);
         rcy_home_page.setItemAnimator(new DefaultItemAnimator());
         requestData();
+        initEvent();
+    }
+
+    private void initEvent() {
+        homePageAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
+
+            }
+        });
+
+        homePageAdapter.setOnItemChildClickListener(new BaseQuickAdapter.OnItemChildClickListener() {
+            @Override
+            public void onItemChildClick(BaseQuickAdapter adapter, View view, int position) {
+                if (view.getId() == R.id.search_bar || view.getId() == R.id.edit_search)  {
+                    Intent intent = new Intent(getActivity(),  SearchActivity.class);
+                    getActivity().startActivity(intent);
+                }
+            }
+        });
     }
 
     /**
