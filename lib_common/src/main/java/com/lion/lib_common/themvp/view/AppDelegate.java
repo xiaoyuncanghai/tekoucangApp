@@ -41,6 +41,8 @@ public abstract class AppDelegate implements IDelegate {
 
     protected SupportActivity activity;
 
+    protected SupportFragment fragment;
+
     public abstract int getRootLayoutId();
 
     @Override
