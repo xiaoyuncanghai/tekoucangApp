@@ -101,10 +101,6 @@ public class ItemHeaderDecoration extends RecyclerView.ItemDecoration {
         }
     }
 
-    /**
-     * @param parent
-     * @param pos
-     */
     private void drawHeader(RecyclerView parent, int pos, Canvas canvas) {
         View topTitleView = mInflater.inflate(R.layout.item_title, parent, false);
         TextView tvTitle = (TextView) topTitleView.findViewById(R.id.tv_title);

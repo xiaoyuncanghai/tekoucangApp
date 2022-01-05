@@ -5,6 +5,9 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.resource.bitmap.RoundedCorners;
+import com.bumptech.glide.request.RequestOptions;
 import com.lion.classify.R;
 import com.lion.classify.data.RightBean;
 import com.lion.classify.listener.RvListener;
@@ -43,11 +46,11 @@ public class RightAdapter extends RvAdapter<RightBean> {
             super(itemView, type, listener);
             switch (type) {
                 case 0:
-                    tvTitle = (TextView) itemView.findViewById(R.id.tv_title);
+                    tvTitle = itemView.findViewById(R.id.tv_title);
                     break;
                 case 1:
-                    tvCity = (TextView) itemView.findViewById(R.id.tvCity);
-                    avatar = (ImageView) itemView.findViewById(R.id.ivAvatar);
+                    tvCity = itemView.findViewById(R.id.tvCity);
+                    avatar = itemView.findViewById(R.id.ivAvatar);
                     break;
             }
 

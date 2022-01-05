@@ -40,18 +40,18 @@ public class LeftAdapter extends RvAdapter<String>{
         LeftHolder(View itemView, int type, RvListener listener) {
             super(itemView, type, listener);
             this.mView = itemView;
-            tvName = (TextView) itemView.findViewById(R.id.tv_sort);
+            tvName = itemView.findViewById(R.id.tv_sort);
         }
 
         @Override
         public void bindHolder(String string, int position) {
             tvName.setText(string);
             if (position == checkedPosition) {
-                mView.setBackgroundColor(Color.parseColor("#f3f3f3"));
-                tvName.setTextColor(Color.parseColor("#0068cf"));
-            } else {
                 mView.setBackgroundColor(Color.parseColor("#FFFFFF"));
-                tvName.setTextColor(Color.parseColor("#1e1d1d"));
+                tvName.setTextColor(Color.parseColor("#a04cff"));
+            } else {
+                mView.setBackgroundColor(Color.parseColor("#f7f7f7"));
+                tvName.setTextColor(Color.parseColor("#484a59"));
             }
         }
 

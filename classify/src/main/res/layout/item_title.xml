@@ -1,19 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/root"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:id="@+id/root"
     android:background="@color/white"
     android:gravity="center_vertical"
     android:orientation="horizontal">
 
     <View
         android:layout_width="0dp"
-        android:layout_weight="1"
         android:layout_height="1dp"
         android:layout_marginLeft="@dimen/size_15dp"
-        android:background="@color/black"/>
+        android:layout_weight="1"
+        android:background="@color/black" />
 
     <TextView
         android:id="@+id/tv_title"
@@ -24,13 +23,13 @@
         android:paddingRight="@dimen/size_10dp"
         android:text=""
         android:textColor="@android:color/black"
-        android:textSize="@dimen/sp_14"/>
+        android:textSize="@dimen/sp_16" />
 
     <View
         android:layout_width="0dp"
-        android:layout_weight="1"
         android:layout_height="1dp"
         android:layout_marginRight="@dimen/size_15dp"
-        android:background="@color/black"/>
+        android:layout_weight="1"
+        android:background="@color/black" />
 
 </LinearLayout>

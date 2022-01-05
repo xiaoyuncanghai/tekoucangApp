@@ -3,7 +3,7 @@
     android:id="@+id/linear_layout"
     android:layout_width="match_parent"
     android:layout_height="50dp"
-    android:background="@android:color/white"
+    android:background="@color/white"
     android:gravity="center"
     android:orientation="vertical">
 
@@ -16,8 +16,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:gravity="center"
-        android:text=""
+        android:text="111111"
         android:textColor="@color/black"
-        android:textSize="14sp"/>
+        android:textSize="16sp"/>
 
 </LinearLayout>
