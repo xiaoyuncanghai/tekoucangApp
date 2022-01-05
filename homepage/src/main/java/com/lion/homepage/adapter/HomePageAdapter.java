@@ -78,7 +78,7 @@ public class HomePageAdapter extends BaseMultiItemQuickAdapter<HomePageDataBean,
             case HomePageDataBean.TYPE_HOME_PAGE_CATEGORY:
                 ImageView iv_homepage_category = helper.getView(R.id.iv_homepage_category);
                 Glide.with(mContext)
-                        .load(item.getMenu_pic())
+                        .load(item.getMenu_appImage())
                         .placeholder(R.drawable.ic_launcher)
                         .error(R.drawable.ic_launcher)
                         .apply(RequestOptions.bitmapTransform(new RoundedCorners(1)))

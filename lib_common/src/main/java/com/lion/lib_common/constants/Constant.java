@@ -10,4 +10,6 @@ public interface Constant {
     public static final String KEY_FIRST_ENTER = "first_enter";
     public static final String KEY_WEB_LINK = "web_link";
 
+    public static final String KEY_CATEGORY_ID = "category_id";
+
 }

@@ -42,7 +42,7 @@ public class HomePageDataBean implements MultiItemEntity {
     private String menu_wapUrl;
     private String menu_appImage;
     private String menu_appTitle;
-    private int menuAppCatid;
+    private String menuAppCatid;
 
     public int getMenu_id() {
         return menu_id;
@@ -108,11 +108,11 @@ public class HomePageDataBean implements MultiItemEntity {
         this.menu_appTitle = menu_appTitle;
     }
 
-    public int getMenuAppCatid() {
+    public String getMenuAppCatid() {
         return menuAppCatid;
     }
 
-    public void setMenuAppCatid(int menuAppCatid) {
+    public void setMenuAppCatid(String menuAppCatid) {
         this.menuAppCatid = menuAppCatid;
     }
 

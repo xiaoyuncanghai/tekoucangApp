@@ -19,7 +19,9 @@ import com.lion.homepage.data.BannerData;
 import com.lion.homepage.data.HomePageDataBean;
 import com.lion.homepage.data.HomePageJsonBean;
 import com.lion.homepage.data.ProductItemJsonBean;
+import com.lion.homepage.ui.ProductListActivity;
 import com.lion.homepage.ui.SearchActivity;
+import com.lion.lib_common.constants.Constant;
 import com.lion.lib_common.constants.URLConstant;
 import com.lion.lib_common.rxEasyhttp.EasyHttp;
 import com.lion.lib_common.rxEasyhttp.callback.SimpleCallBack;
@@ -63,15 +65,21 @@ public class HomePageFragmentDelegate extends AppDelegate {
         homePageAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
-
+                switch (adapter.getItemViewType(position)) {
+                    case HomePageDataBean.TYPE_HOME_PAGE_CATEGORY:
+                        Intent intent = new Intent(getActivity(), ProductListActivity.class);
+                        intent.putExtra(Constant.KEY_CATEGORY_ID, homePageList.get(position).getCategoryId());
+                        getActivity().startActivity(intent);
+                        break;
+                }
             }
         });
 
         homePageAdapter.setOnItemChildClickListener(new BaseQuickAdapter.OnItemChildClickListener() {
             @Override
             public void onItemChildClick(BaseQuickAdapter adapter, View view, int position) {
-                if (view.getId() == R.id.search_bar || view.getId() == R.id.edit_search)  {
-                    Intent intent = new Intent(getActivity(),  SearchActivity.class);
+                if (view.getId() == R.id.search_bar || view.getId() == R.id.edit_search) {
+                    Intent intent = new Intent(getActivity(), SearchActivity.class);
                     getActivity().startActivity(intent);
                 }
             }
@@ -93,7 +101,6 @@ public class HomePageFragmentDelegate extends AppDelegate {
 
                     @Override
                     public void onSuccess(String s) {
-                        LogUtils.d("yuchao, home page data = " + s);
                         HomePageJsonBean jsonBean = new Gson().fromJson(s, HomePageJsonBean.class);
                         if (jsonBean.getStatus() == 200) {
                             homePageItemList.clear();
@@ -127,6 +134,7 @@ public class HomePageFragmentDelegate extends AppDelegate {
                                     menuData.setMenu_url(menuItem.getUrl());
                                     menuData.setMenu_appTitle(menuItem.getApp_title());
                                     menuData.setMenu_wapUrl(menuItem.getWap_url());
+                                    menuData.setMenuAppCatid(menuItem.getApp_catid());
                                     homePageItemList.add(menuData);
                                 }
                             }
