@@ -53,12 +53,12 @@ public class RightFragment extends CommonFragment<RightPresenter, String> implem
     @Override
     protected RightPresenter initPresenter() {
         showRightPage(1);
-        mManager = new GridLayoutManager(mContext, 3);
+        mManager = new GridLayoutManager(mContext, 2);
         //通过isTitle的标志来判断是否是title
         mManager.setSpanSizeLookup(new GridLayoutManager.SpanSizeLookup() {
             @Override
             public int getSpanSize(int position) {
-                return mDatas.get(position).isTitle() ? 3 : 1;
+                return mDatas.get(position).isTitle() ? 2 : 1;
             }
         });
         mRv.setLayoutManager(mManager);
@@ -76,7 +76,7 @@ public class RightFragment extends CommonFragment<RightPresenter, String> implem
                                 Snackbar.LENGTH_SHORT);
                 View mView = snackbar.getView();
                 mView.setBackgroundColor(Color.BLUE);
-                TextView text = (TextView) mView.findViewById(R.id.snackbar_text);
+                TextView text = mView.findViewById(R.id.snackbar_text);
                 text.setTextColor(Color.WHITE);
                 text.setTextSize(25);
                 snackbar.show();
@@ -102,17 +102,17 @@ public class RightFragment extends CommonFragment<RightPresenter, String> implem
             head.setTitleName(rightList.get(i).getCate_name());
             head.setTag(String.valueOf(i));
             mDatas.add(head);
-            List<ClassifyJsonBean.DataBean.ChildrenBean> categoryTwoArray = rightList.get(i)
+            List<ClassifyJsonBean.DataBean.ChildrenBean> childrenBeanList = rightList.get(i)
                     .getChildren();
-            for (int j = 0; j < categoryTwoArray.size(); j++) {
-                RightBean body = new RightBean(categoryTwoArray.get(j).getCate_name());
+            for (int j = 0; j < childrenBeanList.size(); j++) {
+                RightBean body = new RightBean(childrenBeanList.get(j).getCate_name());
                 body.setTag(String.valueOf(i));
                 String name = rightList.get(i).getCate_name();
+                body.setImgsrc(childrenBeanList.get(j).getPic());
                 body.setTitleName(name);
                 mDatas.add(body);
             }
         }
-
         mAdapter.notifyDataSetChanged();
         mDecoration.setData(mDatas);
     }

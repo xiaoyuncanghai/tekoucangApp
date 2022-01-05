@@ -65,6 +65,12 @@ public class RightAdapter extends RvAdapter<RightBean> {
                     break;
                 case 1:
                     tvCity.setText(sortBean.getName());
+                    Glide.with(mContext)
+                            .load(sortBean.getImgsrc())
+                            .placeholder(R.drawable.ic_launcher)
+                            .error(R.drawable.ic_launcher)
+                            .apply(RequestOptions.bitmapTransform(new RoundedCorners(1)))
+                            .into(avatar);
                     break;
             }
 
