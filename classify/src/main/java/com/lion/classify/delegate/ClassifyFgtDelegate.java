@@ -1,5 +1,6 @@
 package com.lion.classify.delegate;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -41,6 +42,7 @@ public class ClassifyFgtDelegate extends AppDelegate implements CheckListener {
     private RightFragment mRightFragment;
     private int targetPosition;
     private boolean isMoved;
+    private LinearLayout edit_search;
 
     @Override
     public int getRootLayoutId() {
@@ -57,11 +59,18 @@ public class ClassifyFgtDelegate extends AppDelegate implements CheckListener {
 
     private void initView() {
         rvSort = get(R.id.rv_sort);
+        edit_search = get(R.id.edit_search);
         categoryPage = get(R.id.category_page);
         mLinearLayoutManager = new LinearLayoutManager(getActivity());
         rvSort.setLayoutManager(mLinearLayoutManager);
         DividerItemDecoration decoration = new DividerItemDecoration(getActivity(), DividerItemDecoration.VERTICAL);
         rvSort.addItemDecoration(decoration);
+        edit_search.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //Intent intent = new Intent(getActivity(), );
+            }
+        });
     }
 
     private void initData() {
