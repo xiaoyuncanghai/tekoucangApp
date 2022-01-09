@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.alibaba.android.arouter.launcher.ARouter;
 import com.apkfuns.logutils.LogUtils;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.google.android.material.snackbar.Snackbar;
@@ -21,6 +22,7 @@ import com.lion.homepage.data.HomePageJsonBean;
 import com.lion.homepage.data.ProductItemJsonBean;
 import com.lion.homepage.ui.ProductListActivity;
 import com.lion.homepage.ui.SearchActivity;
+import com.lion.lib_common.constants.ARouterPath;
 import com.lion.lib_common.constants.Constant;
 import com.lion.lib_common.constants.URLConstant;
 import com.lion.lib_common.rxEasyhttp.EasyHttp;
@@ -67,9 +69,9 @@ public class HomePageFragmentDelegate extends AppDelegate {
             public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
                 switch (adapter.getItemViewType(position)) {
                     case HomePageDataBean.TYPE_HOME_PAGE_CATEGORY:
-                        Intent intent = new Intent(getActivity(), ProductListActivity.class);
-                        intent.putExtra(Constant.KEY_CATEGORY_ID, homePageList.get(position).getCategoryId());
-                        getActivity().startActivity(intent);
+                        ARouter.getInstance().build(ARouterPath.PRODUCT_LIST_PAGE)
+                                .withInt(Constant.KEY_CATEGORY_ID, homePageList.get(position).getCategoryId())
+                                .navigation();
                         break;
                 }
             }

@@ -8,6 +8,8 @@ import android.widget.TextView;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.alibaba.android.arouter.launcher.ARouter;
+import com.apkfuns.logutils.LogUtils;
 import com.google.android.material.snackbar.Snackbar;
 import com.lion.classify.R;
 import com.lion.classify.adapter.RightAdapter;
@@ -17,6 +19,8 @@ import com.lion.classify.listener.CheckListener;
 import com.lion.classify.listener.RvListener;
 import com.lion.classify.presenter.RightPresenter;
 import com.lion.classify.view.ItemHeaderDecoration;
+import com.lion.lib_common.constants.ARouterPath;
+import com.lion.lib_common.constants.Constant;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -67,11 +71,13 @@ public class RightFragment extends CommonFragment<RightPresenter, String> implem
             public void onItemClick(int id, int position) {
                 String content = "";
                 if (R.id.root == id) {
-                    content = "title";
+                    //content = "title";
                 } else if (R.id.content == id) {
-                    content = "content";
+                    ARouter.getInstance().build(ARouterPath.PRODUCT_LIST_PAGE)
+                            .withInt(Constant.KEY_CATEGORY_ID, mDatas.get(position).getCategoryId())
+                            .navigation();
                 }
-                Snackbar snackbar = Snackbar
+                /*Snackbar snackbar = Snackbar
                         .make(mRv, "当前点击的是" + content + ":" + mDatas.get(position).getName(),
                                 Snackbar.LENGTH_SHORT);
                 View mView = snackbar.getView();
@@ -79,7 +85,7 @@ public class RightFragment extends CommonFragment<RightPresenter, String> implem
                 TextView text = mView.findViewById(R.id.snackbar_text);
                 text.setTextColor(Color.WHITE);
                 text.setTextSize(25);
-                snackbar.show();
+                snackbar.show();*/
             }
         });
 
@@ -107,6 +113,8 @@ public class RightFragment extends CommonFragment<RightPresenter, String> implem
             for (int j = 0; j < childrenBeanList.size(); j++) {
                 RightBean body = new RightBean(childrenBeanList.get(j).getCate_name());
                 body.setTag(String.valueOf(i));
+                body.setCategoryId(childrenBeanList.get(j).getId());
+                LogUtils.d("yuchao, id = "+childrenBeanList.get(j).getId());
                 String name = rightList.get(i).getCate_name();
                 body.setImgsrc(childrenBeanList.get(j).getPic());
                 body.setTitleName(name);

@@ -15,9 +15,18 @@ public class RightBean implements Parcelable {
     private String tag;
     private boolean isTitle;
     private String imgsrc;
+    private int categoryId;
 
     public RightBean(String name) {
         this.name = name;
+    }
+
+    public int getCategoryId() {
+        return categoryId;
+    }
+
+    public void setCategoryId(int categoryId) {
+        this.categoryId = categoryId;
     }
 
     protected RightBean(Parcel in) {

@@ -13,6 +13,11 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [moduleName: project.getName()]
+            }
+        }
     }
 
     buildTypes {
@@ -34,4 +39,5 @@ dependencies {
     implementation project(':shop')
     implementation project(':circle')
     implementation project(':mine')
+    annotationProcessor 'com.alibaba:arouter-compiler:1.1.4'
 }

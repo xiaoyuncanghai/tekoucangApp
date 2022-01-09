@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.alibaba.android.arouter.launcher.ARouter;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.gson.Gson;
 import com.lion.classify.R;
@@ -20,6 +21,7 @@ import com.lion.classify.listener.CheckListener;
 import com.lion.classify.listener.RvListener;
 import com.lion.classify.ui.RightFragment;
 import com.lion.classify.view.ItemHeaderDecoration;
+import com.lion.lib_common.constants.ARouterPath;
 import com.lion.lib_common.constants.URLConstant;
 import com.lion.lib_common.rxEasyhttp.EasyHttp;
 import com.lion.lib_common.rxEasyhttp.callback.SimpleCallBack;
@@ -69,6 +71,7 @@ public class ClassifyFgtDelegate extends AppDelegate implements CheckListener {
             @Override
             public void onClick(View view) {
                 //Intent intent = new Intent(getActivity(), );
+                ARouter.getInstance().build(ARouterPath.SEARCH_PATH).navigation();
             }
         });
     }

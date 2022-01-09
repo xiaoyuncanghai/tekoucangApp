@@ -62,7 +62,6 @@ public class MainActDelegate extends AppDelegate {
                 .setOnTabClickListener(new EasyNavigationBar.OnTabClickListener() {
                     @Override
                     public boolean onTabSelectEvent(View view, int position) {
-                        LogUtils.d("yuchao, position = " + position);
                         return false;
                     }
 
