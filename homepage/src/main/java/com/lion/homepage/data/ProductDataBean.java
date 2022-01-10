@@ -6,14 +6,24 @@ public class ProductDataBean implements MultiItemEntity {
     private String imgUrl;
     private String productName;
     private double productMoney;
+    private double vipMoney;
     private int saleNum;
     private int productId;
 
     public static final int TYPE_EMPTY = 0;
     public static final int TYPE_LIST = 1;
+    public static final int TYPE_GRID = 1;
 
     public int getProductId() {
         return productId;
+    }
+
+    public double getVipMoney() {
+        return vipMoney;
+    }
+
+    public void setVipMoney(double vipMoney) {
+        this.vipMoney = vipMoney;
     }
 
     public void setProductId(int productId) {

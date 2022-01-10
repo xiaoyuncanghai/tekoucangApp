@@ -11,5 +11,6 @@ public interface Constant {
     public static final String KEY_WEB_LINK = "web_link";
 
     public static final String KEY_CATEGORY_ID = "category_id";
+    public static final String KEY_CATEGORY_NAME = "category_name";
 
 }

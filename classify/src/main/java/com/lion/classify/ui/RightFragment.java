@@ -74,7 +74,8 @@ public class RightFragment extends CommonFragment<RightPresenter, String> implem
                     //content = "title";
                 } else if (R.id.content == id) {
                     ARouter.getInstance().build(ARouterPath.PRODUCT_LIST_PAGE)
-                            .withInt(Constant.KEY_CATEGORY_ID, mDatas.get(position).getCategoryId())
+                            .withString(Constant.KEY_CATEGORY_ID, mDatas.get(position).getCategoryId())
+                            .withString(Constant.KEY_CATEGORY_NAME, mDatas.get(position).getTitleName())
                             .navigation();
                 }
                 /*Snackbar snackbar = Snackbar

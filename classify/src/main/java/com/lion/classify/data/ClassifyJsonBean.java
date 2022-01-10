@@ -147,12 +147,12 @@ public class ClassifyJsonBean implements Parcelable{
         }
 
         public static class ChildrenBean implements Parcelable {
-            private int id;
+            private String id;
             private String cate_name;
             private String pic;
 
             protected ChildrenBean(Parcel in) {
-                id = in.readInt();
+                id = in.readString();
                 cate_name = in.readString();
                 pic = in.readString();
             }
@@ -169,11 +169,11 @@ public class ClassifyJsonBean implements Parcelable{
                 }
             };
 
-            public int getId() {
+            public String getId() {
                 return id;
             }
 
-            public void setId(int id) {
+            public void setId(String id) {
                 this.id = id;
             }
 
@@ -201,7 +201,7 @@ public class ClassifyJsonBean implements Parcelable{
             @Override
             public void writeToParcel(Parcel dest, int i) {
                 dest.writeString(cate_name);
-                dest.writeInt(id);
+                dest.writeString(id);
                 dest.writeString(pic);
             }
         }

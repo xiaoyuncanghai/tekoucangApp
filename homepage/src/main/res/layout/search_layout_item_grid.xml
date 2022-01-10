@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/size_100dp"
+    android:layout_marginStart="@dimen/size_20dp"
+    android:background="@drawable/prod_item_shape">
+
+    <ImageView
+        android:id="@+id/product_list_iv"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_marginStart="@dimen/size_5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="@dimen/size_5dp"
+        android:src="@drawable/empty"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/product_list_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/size_10dp"
+        android:layout_marginTop="@dimen/size_5dp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:text="维他柠檬茶 真的很好喝"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="@+id/product_list_iv"
+        app:layout_constraintStart_toStartOf="@+id/product_list_iv"
+        app:layout_constraintTop_toBottomOf="@+id/product_list_iv" />
+
+    <TextView
+        android:id="@+id/product_list_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/size_5dp"
+        android:text="$ 100"
+        android:textColor="@color/home_page_product_price"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="@+id/product_list_title"
+        app:layout_constraintTop_toBottomOf="@+id/product_list_title" />
+
+    <TextView
+        android:id="@+id/product_list_sale_num"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/size_5dp"
+        android:text="已售卖 100件"
+        android:textColor="@color/second_desc_color"
+        android:textSize="10sp"
+        app:layout_constraintStart_toStartOf="@id/product_list_price"
+        app:layout_constraintTop_toBottomOf="@+id/product_list_price" />
+
+    <TextView
+        android:id="@+id/product_list_vip_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/size_20dp"
+        android:background="@drawable/score_price_background"
+        android:paddingStart="5dp"
+        android:paddingEnd="5dp"
+        android:text="卷后100元"
+        android:textColor="@color/white"
+        android:textSize="10sp"
+        android:layout_marginBottom="@dimen/size_20dp"
+        app:layout_constraintBottom_toBottomOf="@+id/product_list_sale_num"
+        app:layout_constraintStart_toEndOf="@+id/product_list_price"
+        app:layout_constraintTop_toTopOf="@+id/product_list_price" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

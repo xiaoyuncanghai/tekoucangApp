@@ -15,17 +15,17 @@ public class RightBean implements Parcelable {
     private String tag;
     private boolean isTitle;
     private String imgsrc;
-    private int categoryId;
+    private String categoryId;
 
     public RightBean(String name) {
         this.name = name;
     }
 
-    public int getCategoryId() {
+    public String getCategoryId() {
         return categoryId;
     }
 
-    public void setCategoryId(int categoryId) {
+    public void setCategoryId(String categoryId) {
         this.categoryId = categoryId;
     }
 

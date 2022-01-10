@@ -70,7 +70,8 @@ public class HomePageFragmentDelegate extends AppDelegate {
                 switch (adapter.getItemViewType(position)) {
                     case HomePageDataBean.TYPE_HOME_PAGE_CATEGORY:
                         ARouter.getInstance().build(ARouterPath.PRODUCT_LIST_PAGE)
-                                .withInt(Constant.KEY_CATEGORY_ID, homePageList.get(position).getCategoryId())
+                                .withString(Constant.KEY_CATEGORY_ID, homePageList.get(position).getMenuAppCatid())
+                                .withString(Constant.KEY_CATEGORY_NAME, homePageList.get(position).getMenu_name())
                                 .navigation();
                         break;
                 }
