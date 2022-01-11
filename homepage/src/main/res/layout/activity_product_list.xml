@@ -10,31 +10,74 @@
 
     <include layout="@layout/category_part" />
 
-    <com.scwang.smartrefresh.layout.SmartRefreshLayout
-        android:id="@+id/srl_product_list"
+
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/white">
+        android:layout_height="match_parent">
 
-        <com.scwang.smartrefresh.layout.header.ClassicsHeader
+        <com.scwang.smartrefresh.layout.SmartRefreshLayout
+            android:id="@+id/srl_product_list"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:srlDrawableArrowSize="@dimen/size_13dp"
-            app:srlDrawableProgressSize="@dimen/size_15dp"
-            app:srlTextSizeTitle="@dimen/text_size_13sp" />
+            android:layout_height="match_parent"
+            android:background="@color/white">
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rcy_product_list"
+            <com.scwang.smartrefresh.layout.header.ClassicsHeader
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:srlDrawableArrowSize="@dimen/size_13dp"
+                app:srlDrawableProgressSize="@dimen/size_15dp"
+                app:srlTextSizeTitle="@dimen/text_size_13sp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rcy_product_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/common_bg" />
+
+
+            <com.scwang.smartrefresh.layout.footer.ClassicsFooter
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:srlDrawableArrowSize="@dimen/size_13dp"
+                app:srlDrawableProgressSize="@dimen/size_15dp"
+                app:srlTextSizeTitle="@dimen/text_size_13sp" />
+        </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+
+        <LinearLayout
+            android:id="@+id/product_list_empty"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/common_bg" />
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/size_30dp"
+            android:layout_marginBottom="@dimen/size_30dp"
+            android:gravity="center"
+            android:visibility="gone"
+            android:orientation="vertical">
 
+            <ImageView
+                android:id="@+id/iv_empty"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:src="@drawable/empty" />
 
-        <com.scwang.smartrefresh.layout.footer.ClassicsFooter
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:srlDrawableArrowSize="@dimen/size_13dp"
-            app:srlDrawableProgressSize="@dimen/size_15dp"
-            app:srlTextSizeTitle="@dimen/text_size_13sp" />
-    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+            <TextView
+                android:id="@+id/tv_empty"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/size_30dp"
+                android:layout_marginTop="@dimen/size_5dp"
+                android:layout_marginRight="@dimen/size_30dp"
+                android:text="空空如也~"
+                android:textColor="@color/primaryText"
+                android:textSize="@dimen/text_size_14sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/size_5dp"
+                android:text="换个关键词试试吧"
+                android:textColor="@color/secondaryText"
+                android:textSize="@dimen/text_size_12sp" />
+
+        </LinearLayout>
+    </FrameLayout>
 </LinearLayout>

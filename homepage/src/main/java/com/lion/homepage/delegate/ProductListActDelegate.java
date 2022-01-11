@@ -1,7 +1,10 @@
 package com.lion.homepage.delegate;
 
+import android.content.Context;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -56,13 +59,14 @@ public class ProductListActDelegate extends AppDelegate {
     private String priceOrder = "";
     private String salesOrder = "";
     private String news = "";
+    private String keyword = "";
     private ProductListAdapter productListAdapter;
     private LinearLayoutManager linearLayoutManager;
     private boolean isGrid = true;
     private StaggeredGridLayoutManager staggeredGridLayoutManager;
     private TextView category_part_price;
     private TextView tv_category_part_sale_num;
-    private View emptyView;
+    private LinearLayout product_empty;
 
     @Override
     public int getRootLayoutId() {
@@ -73,7 +77,7 @@ public class ProductListActDelegate extends AppDelegate {
     public void initWidget(Bundle savedInstanceState) {
         super.initWidget(savedInstanceState);
         initView();
-        initData();
+        //initData();
     }
 
     private void initData() {
@@ -83,6 +87,7 @@ public class ProductListActDelegate extends AppDelegate {
                 .params("priceOrder", priceOrder)
                 .params("salesOrder", salesOrder)
                 .params("news", news)
+                .params("keyword", keyword)
                 .addConverterFactory(GsonConverterFactory.create())
                 .execute(new SimpleCallBack<String>() {
 
@@ -97,6 +102,8 @@ public class ProductListActDelegate extends AppDelegate {
                         if (jsonBean.getStatus() == 200) {
                             productListTemp.clear();
                             if (jsonBean.getData() != null && jsonBean.getData().size() > 0) {
+                                srl_product_list.setVisibility(View.VISIBLE);
+                                product_empty.setVisibility(View.GONE);
                                 for (int i = 0; i < jsonBean.getData().size(); i++) {
                                     ProductDataBean product = new ProductDataBean();
                                     product.setImgUrl(jsonBean.getData().get(i).getImage());
@@ -121,12 +128,15 @@ public class ProductListActDelegate extends AppDelegate {
                                 if (srl_product_list.isRefreshing()) {
                                     srl_product_list.finishRefresh();
                                     productList.clear();
+                                    srl_product_list.setVisibility(View.GONE);
+                                    product_empty.setVisibility(View.VISIBLE);
                                 } else if (srl_product_list.isLoading()) {
+                                    srl_product_list.setVisibility(View.VISIBLE);
+                                    product_empty.setVisibility(View.GONE);
                                     srl_product_list.finishLoadmoreWithNoMoreData();
                                 }
                             }
                         }
-
                     }
                 });
     }
@@ -137,6 +147,7 @@ public class ProductListActDelegate extends AppDelegate {
 
         edit_search = get(R.id.edit_search);
         iv_change_layout = get(R.id.iv_change_layout);
+        product_empty = get(R.id.product_list_empty);
 
         tv_category_title = get(R.id.tv_category_title);
         ll_category_part_price = get(R.id.ll_category_part_price);
@@ -163,8 +174,7 @@ public class ProductListActDelegate extends AppDelegate {
         productListAdapter = new ProductListAdapter(getActivity(), productList);
         productListAdapter.setViewType(ProductListAdapter.GRID_TYPE);
         rcy_product_list.setAdapter(productListAdapter);
-        emptyView = View.inflate(this.activity, R.layout.search_layout_item_empty, null);
-        //srl_product_list.autoRefresh();
+        srl_product_list.autoRefresh();
         iv_change_layout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -257,6 +267,26 @@ public class ProductListActDelegate extends AppDelegate {
             public void onRefresh(RefreshLayout refreshlayout) {
                 page = 1;
                 initData();
+            }
+        });
+
+        edit_search.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+
+
+            @Override
+            public boolean onEditorAction(TextView textView, int i, KeyEvent keyEvent) {
+                if (edit_search.getText().toString().length() > 0) {
+                    keyword = edit_search.getText().toString();
+                    srl_product_list.autoRefresh();
+                    InputMethodManager imm = (InputMethodManager) textView
+                            .getContext().getSystemService(
+                                    Context.INPUT_METHOD_SERVICE);
+                    if (imm.isActive()) {
+                        imm.hideSoftInputFromWindow(
+                                textView.getApplicationWindowToken(), 0);
+                    }
+                }
+                return false;
             }
         });
     }
