@@ -37,9 +37,11 @@ public class ProductListAdapter extends RecyclerView.Adapter<ProductListAdapter.
     public ProductListViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view;
         if (viewType == LINEAR_TYPE) {//通过第二个参数viewType判断选用的视图
-            view = View.inflate(mContext, R.layout.search_layout_item_list, null);//加载item布局
+            //view = View.inflate(mContext, R.layout.search_layout_item_list, null);//加载item布局
+            view = LayoutInflater.from(mContext).inflate(R.layout.search_layout_item_list,parent,false);
         } else {
-            view = View.inflate(mContext, R.layout.search_layout_item_grid, null);//加载item布局
+            //view = View.inflate(mContext, R.layout.search_layout_item_grid, null);//加载item布局
+            view = LayoutInflater.from(mContext).inflate(R.layout.search_layout_item_grid,parent,false);
         }
         ProductListViewHolder viewHolder = new ProductListViewHolder(view);
         return viewHolder;

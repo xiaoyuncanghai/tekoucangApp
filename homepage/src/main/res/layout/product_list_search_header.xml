@@ -9,7 +9,6 @@
     tools:ignore="MissingDefaultResource">
 
     <LinearLayout
-        android:id="@+id/edit_search"
         android:layout_width="0dp"
         android:layout_height="@dimen/size_32dp"
         android:layout_gravity="center"
@@ -36,11 +35,13 @@
             android:textColor="@color/secondaryText"
             android:textSize="@dimen/text_size_12sp" />
 
-        <TextView
+        <EditText
+            android:id="@+id/edit_search"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
-            android:text="请输入商品名称"
+            android:background="@null"
+            android:hint="请输入商品名称"
             android:textColor="@color/secondaryText"
             android:textSize="@dimen/text_size_12sp" />
     </LinearLayout>
