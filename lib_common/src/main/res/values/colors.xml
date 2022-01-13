@@ -9,6 +9,7 @@
     <color name="select_tab_color">#702BC5</color>
     <color name="search_color">#F0F0F0</color>
     <color name="first_desc_color">#484A59</color>
+    <color name="color_yy">#fd7406</color>
     <color name="second_desc_color">#38383A</color>
 
     <color name="color_yellow">#FFB100</color>
@@ -19,6 +20,7 @@
     <color name="home_page_best_content">#484a59</color>
     <color name="home_page_product_price">#f11632</color>
     <color name="home_page_subTitle_color">#262626</color>
+    <color name="color_f0">#f02626</color>
 
 
 

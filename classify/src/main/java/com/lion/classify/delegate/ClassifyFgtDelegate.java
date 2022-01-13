@@ -58,7 +58,6 @@ public class ClassifyFgtDelegate extends AppDelegate implements CheckListener {
         initData();
     }
 
-
     private void initView() {
         rvSort = get(R.id.rv_sort);
         edit_search = get(R.id.edit_search);

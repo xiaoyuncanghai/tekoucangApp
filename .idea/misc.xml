@@ -51,6 +51,10 @@
         <entry key="..\:/workspace/Project/code_android/practice/TekoucangApp/lib_common/src/main/res/drawable/share_background_shape.xml" value="0.15364583333333334" />
         <entry key="..\:/workspace/Project/code_android/practice/TekoucangApp/lib_common/src/main/res/drawable/share_search_shape.xml" value="0.15364583333333334" />
         <entry key="..\:/workspace/Project/code_android/practice/TekoucangApp/lib_common/src/main/res/layout/search_layout.xml" value="0.22" />
+        <entry key="..\:/workspace/Project/code_android/practice/TekoucangApp/shop/src/main/res/layout/fragment_shop.xml" value="0.1" />
+        <entry key="..\:/workspace/Project/code_android/practice/TekoucangApp/shop/src/main/res/layout/shop_body_item.xml" value="0.10666666666666667" />
+        <entry key="..\:/workspace/Project/code_android/practice/TekoucangApp/shop/src/main/res/layout/shop_head_item.xml" value="0.4466666666666667" />
+        <entry key="..\:/workspace/Project/code_android/practice/TekoucangApp/shop/src/main/res/layout/shop_linqi_background.xml" value="0.13333333333333333" />
       </map>
     </option>
   </component>

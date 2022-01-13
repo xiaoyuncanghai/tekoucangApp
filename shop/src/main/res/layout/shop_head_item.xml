@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/tv_shop_item_header"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/size_40dp"
+    android:layout_marginBottom="@dimen/size_15dp"
+    android:gravity="center"
+    android:text="111"
+    android:textAlignment="center"
+    android:textColor="@color/white"
+    android:textSize="@dimen/size_32dp"
+    android:textStyle="bold" />
